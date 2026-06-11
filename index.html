@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-title" content="Sewing Clients">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Sewing Clients</title>
-<link href="https://www.google.com/url?q=https://fonts.googleapis.com/css2?family%3DPlayfair%2BDisplay:wght@400;600%26family%3DDM%2BSans:wght@300;400;500%26display%3Dswap&source=gmail&ust=1781224325956000&sa=E" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
 --rose: #c9737a; --rose-light: #e8b4b8; --rose-pale: #f7e8e9;
@@ -24,7 +24,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .header h1 { font-family: 'Playfair Display', serif; font-size: 22px; color: white; }
 .header h1 span { font-size: 20px; margin-right: 6px; }
 .search-wrap { padding: 14px 16px 0; }
-.search-wrap input { width: 100%; padding: 11px 16px 11px 40px; border-radius: 50px; border: 1.5px solid var(--rose-light); background: var(--white); font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text); background-image: url("data:image/svg+xml,%3Csvg xmlns='https://www.google.com/url?q=http://www.w3.org/2000/svg&source=gmail&ust=1781224325956000&sa=E' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c9737a' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 14px center; outline: none; box-shadow: var(--shadow); }
+.search-wrap input { width: 100%; padding: 11px 16px 11px 40px; border-radius: 50px; border: 1.5px solid var(--rose-light); background: var(--white); font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c9737a' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 14px center; outline: none; box-shadow: var(--shadow); }
 .search-wrap input:focus { border-color: var(--rose); }
 .add-btn { display: block; margin: 12px 16px 0; padding: 12px; background: var(--rose); color: white; border: none; border-radius: 50px; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500; width: calc(100% - 32px); cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s; }
 .add-btn:active { background: var(--rose-deep); }
@@ -55,8 +55,8 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .badge-dropped { background: #e0e7ff; color: #3730a3; }
 .badge-active { background: #dcfce7; color: #166534; }
 .badge-ready { background: #fce7f3; color: #9d174d; }
-.badge-pickedup { background: #f0fdf4; color: #15803d; }
-.badge-inactive { background: #f3f4f6; color: #6b7280; }
+.badge-pickedup{ background: #f0fdf4; color: #15803d; }
+.badge-inactive{ background: #f3f4f6; color: #6b7280; }
 .card-expand { border-top: 1px solid var(--rose-pale); padding: 14px; display: none; flex-direction: column; gap: 12px; }
 .card-expand.open { display: flex; }
 .expand-label { font-size: 11px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
@@ -116,7 +116,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </head>
 <body>
 <div class="header">
-<h1><span>&#x1F9F5;</span> Sewing Clients</h1>
+<h1><span>🧵</span> Sewing Clients</h1>
 </div>
 <div class="search-wrap">
 <input type="text" id="searchInput" placeholder="Search clients..." oninput="render()">
@@ -131,19 +131,19 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </div>
 <div class="banner-wrap">
 <div class="banner" onclick="open1099Modal()">
-<div class="banner-icon">&#x1F4B0;</div>
+<div class="banner-icon">💰</div>
 <div class="banner-text">
 <div class="banner-label">Year-to-Date Earned</div>
 <div class="banner-amount" id="ytdTotal">$0.00</div>
 <div class="banner-sub" id="ytdSub">Tap to see 1099 summary</div>
 </div>
-<div style="color:var(--rose-light);font-size:18px">&#x203A;</div>
+<div style="color:var(--rose-light);font-size:18px">›</div>
 </div>
 </div>
 <div class="list" id="clientList"></div>
 <div class="past-header" onclick="togglePast()">
-<h3>&#x1F4E6; Past Clients</h3>
-<div class="past-toggle" id="pastArrow">&#x203A;</div>
+<h3>📦 Past Clients</h3>
+<div class="past-toggle" id="pastArrow">›</div>
 </div>
 <div class="past-list" id="pastList"></div>
 <div class="modal-bg" id="clientModalBg" onclick="closeClientBg(event)">
@@ -182,8 +182,8 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </div>
 <div class="modal-bg" id="modal1099Bg" onclick="close1099Bg(event)">
 <div class="modal">
-<h2>&#x1F4B0; 1099 Summary</h2>
-<p style="font-size:13px;color:var(--text-soft);margin-bottom:16px;">IRS requires a 1099 for any client paying $600+ per year. All jobs past and present count toward the total!</p>
+<h2>💰 1099 Summary</h2>
+<p style="font-size:13px;color:var(--text-soft);margin-bottom:16px;">IRS requires a 1099 for any client paying $600+ per year. All jobs — past and present — count toward the total!</p>
 <div id="summaryList"></div>
 <div style="margin-top:16px;padding-top:16px;border-top:2px solid var(--rose-pale);display:flex;justify-content:space-between;align-items:center;">
 <span style="font-weight:500;font-size:14px;">Total Year-to-Date</span>
@@ -206,205 +206,205 @@ function uid() { return Date.now().toString(36) + Math.random().toString(36).sli
 function color(name) { let h=0; for(let c of name) h=(h*31+c.charCodeAt(0))%COLORS.length; return COLORS[h]; }
 function initials(name) { return name.trim().split(' ').map(w=>w[0]||'').slice(0,2).join('').toUpperCase(); }
 function fmt(n) { return '$'+(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
-function clientTotal(c) { return (https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325956000&sa=E||[]).reduce(function(s,j){ return s+(j.payments||[]).reduce(function(js,p){return js+Number(p.amount||0);},0); },0); }
-function jobTotal(j) { return (j.payments||[]).reduce(function(s,p){return s+Number(p.amount||0);},0); }
-function yearTotal() { return clients.reduce(function(s,c){return s+clientTotal(c);},0); }
+function clientTotal(c) { return (c.jobs||[]).reduce((s,j)=>{ return s+(j.payments||[]).reduce((js,p)=>js+Number(p.amount||0),0); },0); }
+function jobTotal(j) { return (j.payments||[]).reduce((s,p)=>s+Number(p.amount||0),0); }
+function yearTotal() { return clients.reduce((s,c)=>s+clientTotal(c),0); }
 function isClientPast(c) {
- var jobs = https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325956000&sa=E || [];
- if (jobs.length === 0) return false;
- return jobs.every(function(j) { return j.status === 'archived' || j.status === 'pickedup'; });
+  const jobs = c.jobs || [];
+  if (jobs.length === 0) return false;
+  return jobs.every(j => j.status === 'archived' || j.status === 'pickedup');
 }
 function render() {
- var q = document.getElementById('searchInput').value.toLowerCase();
- var yt = yearTotal();
- document.getElementById('ytdTotal').textContent = fmt(yt);
- var near = clients.filter(function(c){ var t=clientTotal(c); return t>=1500&&t<2000; });
- var over = clients.filter(function(c){return clientTotal(c)>=2000;});
- var sub = 'Tap to see 1099 summary';
- if(over.length) sub = 'Warning: '+over.length+' client'+(over.length>1?'s':'')+' over $2,000!';
- else if(near.length) sub = 'Watch: '+near.length+' client'+(near.length>1?'s':'')+' approaching $2,000';
- document.getElementById('ytdSub').textContent = sub;
- var active = clients.filter(function(c) {
- if(isClientPast(c)) return false;
- if(q && !c.name.toLowerCase().includes(q)) return false;
- if(currentTab==='all') return true;
- return (https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325956000&sa=E||[]).some(function(j){return j.status===currentTab;});
- });
- var list = document.getElementById('clientList');
- list.innerHTML = active.length ? active.map(function(c){return cardHTML(c);}).join('') : '<div class="empty"><div>&#x1F9F5;</div>No clients here yet!</div>';
- var past = clients.filter(function(c) {
- if(!isClientPast(c)) return false;
- if(q && !c.name.toLowerCase().includes(q)) return false;
- return true;
- });
- var pastList = document.getElementById('pastList');
- pastList.innerHTML = past.length ? past.map(function(c){return cardHTML(c,true);}).join('') : '<div class="empty" style="padding:20px"><div>&#x1F4E6;</div>No past clients yet</div>';
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.getElementById('ytdTotal').textContent = fmt(yearTotal());
+  const near = clients.filter(c=>{ const t=clientTotal(c); return t>=1500&&t<2000; });
+  const over = clients.filter(c=>clientTotal(c)>=2000);
+  let sub = 'Tap to see 1099 summary';
+  if(over.length) sub = '⚠️ '+over.length+' client'+(over.length>1?'s':'')+' over $2,000!';
+  else if(near.length) sub = '👀 '+near.length+' client'+(near.length>1?'s':'')+' approaching $2,000';
+  document.getElementById('ytdSub').textContent = sub;
+  const active = clients.filter(c => {
+    if(isClientPast(c)) return false;
+    if(q && !c.name.toLowerCase().includes(q)) return false;
+    if(currentTab==='all') return true;
+    return (c.jobs||[]).some(j=>j.status===currentTab);
+  });
+  const list = document.getElementById('clientList');
+  list.innerHTML = active.length ? active.map(c=>cardHTML(c)).join('') : '<div class="empty"><div>🧵</div>No clients here yet!</div>';
+  const past = clients.filter(c => {
+    if(!isClientPast(c)) return false;
+    if(q && !c.name.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const pastList = document.getElementById('pastList');
+  pastList.innerHTML = past.length ? past.map(c=>cardHTML(c,true)).join('') : '<div class="empty" style="padding:20px"><div>📦</div>No past clients yet</div>';
 }
-function cardHTML(c, isPast) {
- var total = clientTotal(c);
- var totalClass = 'total-ok', totalExtra = '';
- if(total>=2000){totalClass='total-danger';totalExtra=' 1099!';}
- else if(total>=1500){totalClass='total-warn';totalExtra=' Watch';}
- var addrHTML = c.address ? '<div class="card-address">&#x1F4CD; <a href="https://www.google.com/url?q=https://maps.google.com/?q%3D'%2BencodeURIComponent(c.address)%2B&source=gmail&ust=1781224325956000&sa=E'" target="_blank">'+c.address+'</a></div>' : '';
- var activeJobs = (https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E||[]).filter(function(j){return j.status!=='archived'&&j.status!=='pickedup';});
- var latestJob = activeJobs.length ? activeJobs[activeJobs.length-1] : (https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E||[]).slice(-1)[0];
- var badgeMap = {active:'badge-active',pending:'badge-pending',dropped:'badge-dropped',ready:'badge-ready',pickedup:'badge-pickedup'};
- var badgeLabel = {active:'In Progress',pending:'Pending',dropped:'Dropped Off',ready:'Ready! &#x1F389;',pickedup:'Picked Up &#x2705;'};
- var badgeStatus = latestJob ? latestJob.status : 'inactive';
- var jobsHTML = (https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E||[]).map(function(j,ji){
- var jt = jobTotal(j);
- var isArchived = j.status==='archived';
- var isDone = j.status==='pickedup';
- var isLocked = isArchived||isDone;
- var paymentsHTML = (j.payments||[]).map(function(p,pi){
- return '<div class="payment-row"><span class="payment-desc">'+(p.desc||'Payment')+'</span><span class="payment-amt">'+fmt(p.amount)+'</span>'+
- (!isLocked?'<button class="payment-del" onclick="delPayment(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\','+ji+','+pi+');event.stopPropagation()">x</button>':'')+
- '</div>';
- }).join('');
- var statusBtns = ['pending','dropped','active','ready','pickedup'].map(function(s){
- var labels = {pending:'Pending',dropped:'Dropped Off',active:'In Progress',ready:'Ready',pickedup:'Picked Up'};
- return '<button class="status-btn'+(j.status===s?' sel':'')+'" onclick="setJobStatus(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\','+ji+',\''+s+'\');event.stopPropagation()">'+labels[s]+'</button>';
- }).join('');
- return '<div class="job-card" style="'+(isLocked?'opacity:0.6':'')+'">'+
- '<div class="job-header"><div>'+
- '<div class="job-title">'+(https://www.google.com/url?q=http://j.work&source=gmail&ust=1781224325957000&sa=E||'No description')+'</div>'+
- '<div class="job-date">'+new Date(j.created).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'</div>'+
- '</div><div style="display:flex;gap:6px;align-items:center">'+
- '<span class="job-badge '+(badgeMap[j.status]||'badge-inactive')+'" style="font-size:10px;padding:2px 8px">'+(isArchived?'Archived':(badgeLabel[j.status]||j.status))+'</span>'+
- (!isLocked?'<button class="payment-del" style="font-size:18px;color:#ccc" onclick="archiveJob(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\','+ji+');event.stopPropagation()" title="Archive">&#x1F4E6;</button>':'')+
- '</div></div>'+
- (j.notes?'<div style="font-size:12px;color:var(--text-soft);margin-top:4px">'+j.notes+'</div>':'')+
- '<div class="job-payments">'+(paymentsHTML||'<span style="font-size:12px;color:var(--text-soft)">No payments yet</span>')+'</div>'+
- (jt>0?'<div class="job-total">Job total: '+fmt(jt)+'</div>':'')+
- (!isLocked?'<div class="add-payment"><input type="text" id="pdesc-'+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'-'+ji+'" placeholder="Description"><input type="number" id="pamt-'+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'-'+ji+'" placeholder="$" style="max-width:70px"><button onclick="addPayment(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\','+ji+')">Add $</button></div>':'')+
- (!isLocked?'<div class="status-row" style="margin-top:8px">'+statusBtns+'</div>':'')+
- '</div>';
- }).join('');
- var flagHTML = '';
- if(total>=2000) flagHTML='<div class="flag-danger">Over $2,000 - prepare a 1099!</div>';
- else if(total>=1500) flagHTML='<div class="flag-warn">Getting close to $2,000!</div>';
- else if(total>=600) flagHTML='<div class="flag-warn">Over $600 - keep tracking.</div>';
- return '<div class="card" id="card-'+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'">'+
- '<div class="card-main" onclick="toggleCard(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\')">'+
- '<div class="avatar" style="background:'+color(https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E)+'">'+initials(https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E)+'</div>'+
- '<div class="card-info">'+
- '<div class="card-name">'+https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E+'</div>'+
- '<div class="card-work">'+(latestJob?latestJob.work:'No active job')+'</div>'+
- addrHTML+
- '<div class="card-total '+totalClass+'">All-time: '+fmt(total)+totalExtra+'</div>'+
- '</div>'+
- (latestJob?'<div class="badge '+(badgeMap[badgeStatus]||'badge-inactive')+'">'+(badgeLabel[badgeStatus]||badgeStatus)+'</div>':'')+
- '</div>'+
- '<div class="card-expand" id="expand-'+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'">'+
- (c.phone?'<div><div class="expand-label">Phone</div><div class="expand-val"><a href="tel:'+c.phone+'" style="color:var(--rose);text-decoration:none">'+c.phone+'</a></div></div>':'')+
- (c.address?'<div><div class="expand-label">Address</div><div class="expand-val"><a href="https://www.google.com/url?q=https://maps.google.com/?q%3D'%2BencodeURIComponent(c.address)%2B&source=gmail&ust=1781224325957000&sa=E'" target="_blank" style="color:var(--rose);text-decoration:none">&#x1F4CD; '+c.address+' - Open in Maps</a></div></div>':'')+
- (c.notes?'<div><div class="expand-label">Client Notes</div><div class="expand-val">'+c.notes+'</div></div>':'')+
- flagHTML+
- '<div><div class="expand-label" style="margin-bottom:8px">Job History ('+(https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E||[]).length+' job'+((https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E||[]).length!==1?'s':'')+')</div>'+
- (jobsHTML||'<div style="font-size:13px;color:var(--text-soft)">No jobs yet</div>')+'</div>'+
- '<div class="expand-actions">'+
- '<button class="action-btn primary" onclick="openJobModal(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\');event.stopPropagation()">+ New Job</button>'+
- '<button class="action-btn" onclick="openClientModal(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\');event.stopPropagation()">Edit</button>'+
- '<button class="action-btn danger" onclick="deleteClient(\''+https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E+'\');event.stopPropagation()">Delete</button>'+
- '</div>'+
- '</div></div>';
+function cardHTML(c, isPast=false) {
+  const total = clientTotal(c);
+  let totalClass = 'total-ok', totalExtra = '';
+  if(total>=2000){totalClass='total-danger';totalExtra=' 🚨 1099!';}
+  else if(total>=1500){totalClass='total-warn';totalExtra=' 👀';}
+  const addrHTML = c.address ? '<div class="card-address">📍 <a href="https://maps.google.com/?q='+encodeURIComponent(c.address)+'" target="_blank">'+c.address+'</a></div>' : '';
+  const activeJobs = (c.jobs||[]).filter(j=>j.status!=='archived'&&j.status!=='pickedup');
+  const latestJob = activeJobs.length ? activeJobs[activeJobs.length-1] : (c.jobs||[]).slice(-1)[0];
+  const badgeMap = {active:'badge-active',pending:'badge-pending',dropped:'badge-dropped',ready:'badge-ready',pickedup:'badge-pickedup'};
+  const badgeLabel = {active:'In Progress',pending:'Pending',dropped:'Dropped Off',ready:'Ready! 🎉',pickedup:'Picked Up ✅'};
+  const badgeStatus = latestJob ? latestJob.status : 'inactive';
+  const jobsHTML = (c.jobs||[]).map((j,ji)=>{
+    const jt = jobTotal(j);
+    const isArchived = j.status==='archived';
+    const isDone = j.status==='pickedup';
+    const isLocked = isArchived||isDone;
+    const paymentsHTML = (j.payments||[]).map((p,pi)=>
+      '<div class="payment-row"><span class="payment-desc">'+(p.desc||'Payment')+'</span><span class="payment-amt">'+fmt(p.amount)+'</span>'+
+      (!isLocked?'<button class="payment-del" onclick="delPayment(\''+c.id+'\','+ji+','+pi+');event.stopPropagation()">×</button>':'')+
+      '</div>'
+    ).join('');
+    const statusBtns = ['pending','dropped','active','ready','pickedup'].map(s=>
+      '<button class="status-btn'+(j.status===s?' sel':'')+'" onclick="setJobStatus(\''+c.id+'\','+ji+',\''+s+'\');event.stopPropagation()">'+(
+        {pending:'Pending',dropped:'Dropped Off',active:'In Progress',ready:'Ready',pickedup:'Picked Up'}[s]
+      )+'</button>'
+    ).join('');
+    return '<div class="job-card" style="'+(isLocked?'opacity:0.6':'')+'">'+
+      '<div class="job-header"><div>'+
+        '<div class="job-title">'+(j.work||'No description')+'</div>'+
+        '<div class="job-date">'+new Date(j.created).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'</div>'+
+      '</div><div style="display:flex;gap:6px;align-items:center">'+
+        '<span class="job-badge '+(badgeMap[j.status]||'badge-inactive')+'" style="font-size:10px;padding:2px 8px">'+(isArchived?'Archived':(badgeLabel[j.status]||j.status))+'</span>'+
+        (!isLocked?'<button class="payment-del" style="font-size:18px;color:#ccc" onclick="archiveJob(\''+c.id+'\','+ji+');event.stopPropagation()" title="Archive">📦</button>':'')+
+      '</div></div>'+
+      (j.notes?'<div style="font-size:12px;color:var(--text-soft);margin-top:4px">'+j.notes+'</div>':'')+
+      '<div class="job-payments">'+(paymentsHTML||'<span style="font-size:12px;color:var(--text-soft)">No payments yet</span>')+'</div>'+
+      (jt>0?'<div class="job-total">Job total: '+fmt(jt)+'</div>':'')+
+      (!isLocked?'<div class="add-payment"><input type="text" id="pdesc-'+c.id+'-'+ji+'" placeholder="Description"><input type="number" id="pamt-'+c.id+'-'+ji+'" placeholder="$" style="max-width:70px"><button onclick="addPayment(\''+c.id+'\','+ji+')">Add $</button></div>':'')+
+      (!isLocked?'<div class="status-row" style="margin-top:8px">'+statusBtns+'</div>':'')+
+    '</div>';
+  }).join('');
+  let flagHTML = '';
+  if(total>=2000) flagHTML='<div class="flag-danger">🚨 Over $2,000 — prepare a 1099!</div>';
+  else if(total>=1500) flagHTML='<div class="flag-warn">👀 Getting close to $2,000!</div>';
+  else if(total>=600) flagHTML='<div class="flag-warn">📋 Over $600 — keep tracking.</div>';
+  return '<div class="card" id="card-'+c.id+'">'+
+    '<div class="card-main" onclick="toggleCard(\''+c.id+'\')">'+
+      '<div class="avatar" style="background:'+color(c.name)+'">'+initials(c.name)+'</div>'+
+      '<div class="card-info">'+
+        '<div class="card-name">'+c.name+'</div>'+
+        '<div class="card-work">'+(latestJob?latestJob.work:'No active job')+'</div>'+
+        addrHTML+
+        '<div class="card-total '+totalClass+'">All-time: '+fmt(total)+totalExtra+'</div>'+
+      '</div>'+
+      (latestJob?'<div class="badge '+(badgeMap[badgeStatus]||'badge-inactive')+'">'+(badgeLabel[badgeStatus]||badgeStatus)+'</div>':'')+
+    '</div>'+
+    '<div class="card-expand" id="expand-'+c.id+'">'+
+      (c.phone?'<div><div class="expand-label">Phone</div><div class="expand-val"><a href="tel:'+c.phone+'" style="color:var(--rose);text-decoration:none">'+c.phone+'</a></div></div>':'')+
+      (c.address?'<div><div class="expand-label">Address</div><div class="expand-val"><a href="https://maps.google.com/?q='+encodeURIComponent(c.address)+'" target="_blank" style="color:var(--rose);text-decoration:none">📍 '+c.address+' → Open in Maps</a></div></div>':'')+
+      (c.notes?'<div><div class="expand-label">Client Notes</div><div class="expand-val">'+c.notes+'</div></div>':'')+
+      flagHTML+
+      '<div><div class="expand-label" style="margin-bottom:8px">Job History ('+(c.jobs||[]).length+' job'+((c.jobs||[]).length!==1?'s':'')+')</div>'+
+      (jobsHTML||'<div style="font-size:13px;color:var(--text-soft)">No jobs yet</div>')+'</div>'+
+      '<div class="expand-actions">'+
+        '<button class="action-btn primary" onclick="openJobModal(\''+c.id+'\');event.stopPropagation()">+ New Job</button>'+
+        '<button class="action-btn" onclick="openClientModal(\''+c.id+'\');event.stopPropagation()">✏️ Edit</button>'+
+        '<button class="action-btn danger" onclick="deleteClient(\''+c.id+'\');event.stopPropagation()">🗑 Delete</button>'+
+      '</div>'+
+    '</div></div>';
 }
 function toggleCard(id) { document.getElementById('expand-'+id).classList.toggle('open'); }
-function setTab(el,tab) { document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');}); el.classList.add('active'); currentTab=tab; render(); }
-function togglePast() { pastOpen=!pastOpen; document.getElementById('pastList').classList.toggle('open',pastOpen); document.getElementById('pastArrow').textContent=pastOpen?'<':'›'; }
-function openClientModal(id) {
- editClientId = id||null;
- document.getElementById('clientModalTitle').textContent = id ? 'Edit Client' : 'New Client';
- if(id) {
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===id;});
- document.getElementById('fName').value=https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E||'';
- document.getElementById('fPhone').value=c.phone||'';
- document.getElementById('fAddress').value=c.address||'';
- document.getElementById('fNotes').value=c.notes||'';
- } else {
- ['fName','fPhone','fAddress','fNotes'].forEach(function(i){document.getElementById(i).value='';});
- }
- document.getElementById('clientModalBg').classList.add('open');
+function setTab(el,tab) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); currentTab=tab; render(); }
+function togglePast() { pastOpen=!pastOpen; document.getElementById('pastList').classList.toggle('open',pastOpen); document.getElementById('pastArrow').textContent=pastOpen?'‹':'›'; }
+function openClientModal(id=null) {
+  editClientId = id;
+  document.getElementById('clientModalTitle').textContent = id ? 'Edit Client' : 'New Client';
+  if(id) {
+    const c = clients.find(x=>x.id===id);
+    document.getElementById('fName').value=c.name||'';
+    document.getElementById('fPhone').value=c.phone||'';
+    document.getElementById('fAddress').value=c.address||'';
+    document.getElementById('fNotes').value=c.notes||'';
+  } else {
+    ['fName','fPhone','fAddress','fNotes'].forEach(i=>document.getElementById(i).value='');
+  }
+  document.getElementById('clientModalBg').classList.add('open');
 }
 function closeClientModal() { document.getElementById('clientModalBg').classList.remove('open'); editClientId=null; }
 function closeClientBg(e) { if(e.target===document.getElementById('clientModalBg')) closeClientModal(); }
 function saveClient() {
- var name = document.getElementById('fName').value.trim();
- if(!name) { alert('Please enter a name'); return; }
- if(editClientId) {
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===editClientId;});
- Object.assign(c,{name:name,phone:document.getElementById('fPhone').value.trim(),address:document.getElementById('fAddress').value.trim(),notes:document.getElementById('fNotes').value.trim()});
- } else {
- var newClient = {id:uid(),name:name,phone:document.getElementById('fPhone').value.trim(),address:document.getElementById('fAddress').value.trim(),notes:document.getElementById('fNotes').value.trim(),jobs:[],created:Date.now()};
- clients.unshift(newClient);
- closeClientModal(); save(); render();
- openJobModal(newClient.id); return;
- }
- closeClientModal(); save(); render();
+  const name = document.getElementById('fName').value.trim();
+  if(!name) { alert('Please enter a name'); return; }
+  if(editClientId) {
+    const c = clients.find(x=>x.id===editClientId);
+    Object.assign(c,{ name, phone:document.getElementById('fPhone').value.trim(), address:document.getElementById('fAddress').value.trim(), notes:document.getElementById('fNotes').value.trim() });
+  } else {
+    const newClient = { id:uid(), name, phone:document.getElementById('fPhone').value.trim(), address:document.getElementById('fAddress').value.trim(), notes:document.getElementById('fNotes').value.trim(), jobs:[], created:Date.now() };
+    clients.unshift(newClient);
+    closeClientModal(); save(); render();
+    openJobModal(newClient.id); return;
+  }
+  closeClientModal(); save(); render();
 }
 function openJobModal(clientId) {
- addJobClientId = clientId;
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===clientId;});
- document.getElementById('jobModalTitle').textContent = 'New Job - '+https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E;
- document.getElementById('fJobWork').value='';
- document.getElementById('fJobStatus').value='dropped';
- document.getElementById('fJobNotes').value='';
- document.getElementById('jobModalBg').classList.add('open');
+  addJobClientId = clientId;
+  const c = clients.find(x=>x.id===clientId);
+  document.getElementById('jobModalTitle').textContent = 'New Job — '+c.name;
+  document.getElementById('fJobWork').value='';
+  document.getElementById('fJobStatus').value='dropped';
+  document.getElementById('fJobNotes').value='';
+  document.getElementById('jobModalBg').classList.add('open');
 }
 function closeJobModal() { document.getElementById('jobModalBg').classList.remove('open'); addJobClientId=null; }
 function closeJobBg(e) { if(e.target===document.getElementById('jobModalBg')) closeJobModal(); }
 function saveJob() {
- var work = document.getElementById('fJobWork').value.trim();
- if(!work) { alert('Please describe the job'); return; }
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===addJobClientId;});
- if(!https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E) https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E=[];
- c.jobs.push({id:uid(),work:work,status:document.getElementById('fJobStatus').value,notes:document.getElementById('fJobNotes').value.trim(),payments:[],created:Date.now()});
- closeJobModal(); save(); render();
- setTimeout(function(){ var el=document.getElementById('expand-'+addJobClientId); if(el) el.classList.add('open'); },50);
+  const work = document.getElementById('fJobWork').value.trim();
+  if(!work) { alert('Please describe the job'); return; }
+  const c = clients.find(x=>x.id===addJobClientId);
+  if(!c.jobs) c.jobs=[];
+  c.jobs.push({ id:uid(), work, status:document.getElementById('fJobStatus').value, notes:document.getElementById('fJobNotes').value.trim(), payments:[], created:Date.now() });
+  closeJobModal(); save(); render();
+  setTimeout(()=>{ const el=document.getElementById('expand-'+(addJobClientId||c.id)); if(el) el.classList.add('open'); },50);
 }
-function archiveJob(clientId,jobIdx) {
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===clientId;});
- if(c&&https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx]){https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].status='archived';save();render();}
+function archiveJob(clientId, jobIdx) {
+  const c = clients.find(x=>x.id===clientId);
+  if(c && c.jobs[jobIdx]) { c.jobs[jobIdx].status='archived'; save(); render(); }
 }
-function setJobStatus(clientId,jobIdx,status) {
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===clientId;});
- if(c&&https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx]){
- https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].status=status; save(); render();
- if(!isClientPast(c)){setTimeout(function(){var el=document.getElementById('expand-'+clientId);if(el)el.classList.add('open');},50);}
- }
+function setJobStatus(clientId, jobIdx, status) {
+  const c = clients.find(x=>x.id===clientId);
+  if(c && c.jobs[jobIdx]) {
+    c.jobs[jobIdx].status = status; save(); render();
+    if(!isClientPast(c)) { setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50); }
+  }
 }
 function deleteClient(id) {
- if(!confirm('Delete this client and all their history?')) return;
- clients=clients.filter(function(c){return https://www.google.com/url?q=http://c.id&source=gmail&ust=1781224325957000&sa=E!==id;}); save(); render();
+  if(!confirm('Delete this client and all their history?')) return;
+  clients=clients.filter(c=>c.id!==id); save(); render();
 }
-function addPayment(clientId,jobIdx) {
- var desc = document.getElementById('pdesc-'+clientId+'-'+jobIdx).value.trim();
- var amt = parseFloat(document.getElementById('pamt-'+clientId+'-'+jobIdx).value);
- if(!amt||isNaN(amt)){alert('Enter a valid amount');return;}
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===clientId;});
- if(!https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].payments) https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].payments=[];
- https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].payments.push({desc:desc||'Payment',amount:amt});
- save(); render();
- setTimeout(function(){var el=document.getElementById('expand-'+clientId);if(el)el.classList.add('open');},50);
+function addPayment(clientId, jobIdx) {
+  const desc = document.getElementById('pdesc-'+clientId+'-'+jobIdx).value.trim();
+  const amt = parseFloat(document.getElementById('pamt-'+clientId+'-'+jobIdx).value);
+  if(!amt||isNaN(amt)) { alert('Enter a valid amount'); return; }
+  const c = clients.find(x=>x.id===clientId);
+  if(!c.jobs[jobIdx].payments) c.jobs[jobIdx].payments=[];
+  c.jobs[jobIdx].payments.push({ desc:desc||'Payment', amount:amt });
+  save(); render();
+  setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50);
 }
-function delPayment(clientId,jobIdx,payIdx) {
- var c = clients.find(function(x){return https://www.google.com/url?q=http://x.id&source=gmail&ust=1781224325957000&sa=E===clientId;});
- if(c){https://www.google.com/url?q=http://c.jobs&source=gmail&ust=1781224325957000&sa=E[jobIdx].payments.splice(payIdx,1);save();render();
- setTimeout(function(){var el=document.getElementById('expand-'+clientId);if(el)el.classList.add('open');},50);}
+function delPayment(clientId, jobIdx, payIdx) {
+  const c = clients.find(x=>x.id===clientId);
+  if(c) { c.jobs[jobIdx].payments.splice(payIdx,1); save(); render();
+    setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50); }
 }
 function open1099Modal() {
- var sorted = clients.filter(function(c){return clientTotal(c)>0;}).sort(function(a,b){return clientTotal(b)-clientTotal(a);});
- var html = sorted.map(function(c){
- var t=clientTotal(c);
- var flag='',col='var(--text)';
- if(t>=2000){flag='1099 required';col='var(--danger)';}
- else if(t>=1500){flag='Watch this one';col='var(--warn)';}
- else if(t>=600){flag='Track for 1099';col='var(--text-soft)';}
- return '<div class="summary-client"><div><div class="summary-name">'+https://www.google.com/url?q=http://c.name&source=gmail&ust=1781224325957000&sa=E+'</div><div class="summary-flag" style="color:'+col+'">'+flag+'</div></div><div class="summary-amt" style="color:'+col+'">'+fmt(t)+'</div></div>';
- }).join('')||'<p style="color:var(--text-soft);font-size:14px;text-align:center;padding:20px">No payments logged yet!</p>';
- document.getElementById('summaryList').innerHTML=html;
- document.getElementById('summaryTotal').textContent=fmt(yearTotal());
- document.getElementById('modal1099Bg').classList.add('open');
+  const sorted = [...clients].filter(c=>clientTotal(c)>0).sort((a,b)=>clientTotal(b)-clientTotal(a));
+  const html = sorted.map(c=>{
+    const t=clientTotal(c);
+    let flag='',col='var(--text)';
+    if(t>=2000){flag='🚨 1099 required';col='var(--danger)';}
+    else if(t>=1500){flag='👀 Watch this one';col='var(--warn)';}
+    else if(t>=600){flag='📋 Track for 1099';col='var(--text-soft)';}
+    return '<div class="summary-client"><div><div class="summary-name">'+c.name+'</div><div class="summary-flag" style="color:'+col+'">'+flag+'</div></div><div class="summary-amt" style="color:'+col+'">'+fmt(t)+'</div></div>';
+  }).join('')||'<p style="color:var(--text-soft);font-size:14px;text-align:center;padding:20px">No payments logged yet!</p>';
+  document.getElementById('summaryList').innerHTML=html;
+  document.getElementById('summaryTotal').textContent=fmt(yearTotal());
+  document.getElementById('modal1099Bg').classList.add('open');
 }
 function close1099Modal() { document.getElementById('modal1099Bg').classList.remove('open'); }
 function close1099Bg(e) { if(e.target===document.getElementById('modal1099Bg')) close1099Modal(); }
