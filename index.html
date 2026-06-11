@@ -20,18 +20,23 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+
 .header { background: linear-gradient(135deg, var(--rose-deep) 0%, var(--rose) 60%, var(--rose-light) 100%); padding: 20px 16px 16px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(169,85,96,0.2); }
 .header h1 { font-family: 'Playfair Display', serif; font-size: 22px; color: white; }
 .header h1 span { font-size: 20px; margin-right: 6px; }
+
 .search-wrap { padding: 14px 16px 0; }
 .search-wrap input { width: 100%; padding: 11px 16px 11px 40px; border-radius: 50px; border: 1.5px solid var(--rose-light); background: var(--white); font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c9737a' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: 14px center; outline: none; box-shadow: var(--shadow); }
 .search-wrap input:focus { border-color: var(--rose); }
+
 .add-btn { display: block; margin: 12px 16px 0; padding: 12px; background: var(--rose); color: white; border: none; border-radius: 50px; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500; width: calc(100% - 32px); cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s; }
 .add-btn:active { background: var(--rose-deep); }
+
 .tabs { display: flex; overflow-x: auto; gap: 8px; padding: 14px 16px 0; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab { flex-shrink: 0; padding: 7px 14px; border-radius: 50px; font-size: 13px; font-weight: 500; border: 1.5px solid var(--rose-light); background: var(--white); color: var(--text-soft); cursor: pointer; transition: all 0.2s; }
 .tab.active { background: var(--rose); border-color: var(--rose); color: white; }
+
 .banner-wrap { padding: 12px 16px 0; }
 .banner { background: linear-gradient(135deg, var(--rose-pale), #fff); border: 1.5px solid var(--rose-light); border-radius: var(--radius); padding: 12px 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .banner-icon { font-size: 22px; }
@@ -39,7 +44,9 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .banner-label { font-size: 11px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.5px; }
 .banner-amount { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--rose-deep); font-weight: 600; }
 .banner-sub { font-size: 12px; color: var(--text-soft); margin-top: 1px; }
+
 .list { padding: 12px 16px 0; display: flex; flex-direction: column; gap: 10px; }
+
 .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .card-main { display: flex; align-items: flex-start; padding: 14px; gap: 12px; cursor: pointer; }
 .avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: white; flex-shrink: 0; }
@@ -50,6 +57,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .card-address a { color: var(--rose); text-decoration: none; }
 .card-total { font-size: 13px; font-weight: 500; margin-top: 4px; }
 .total-warn { color: var(--warn); } .total-danger { color: var(--danger); } .total-ok { color: var(--success); }
+
 .badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 50px; white-space: nowrap; align-self: flex-start; margin-top: 2px; }
 .badge-pending { background: #fff3cd; color: #8a6a00; }
 .badge-dropped { background: #e0e7ff; color: #3730a3; }
@@ -57,10 +65,13 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .badge-ready { background: #fce7f3; color: #9d174d; }
 .badge-pickedup{ background: #f0fdf4; color: #15803d; }
 .badge-inactive{ background: #f3f4f6; color: #6b7280; }
+
 .card-expand { border-top: 1px solid var(--rose-pale); padding: 14px; display: none; flex-direction: column; gap: 12px; }
 .card-expand.open { display: flex; }
+
 .expand-label { font-size: 11px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .expand-val { font-size: 14px; color: var(--text); }
+
 .job-card { background: var(--rose-pale); border-radius: 12px; padding: 10px 12px; margin-bottom: 6px; }
 .job-header { display: flex; justify-content: space-between; align-items: center; }
 .job-title { font-size: 13px; font-weight: 500; color: var(--text); }
@@ -73,20 +84,25 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .payment-del { background: none; border: none; color: #ccc; font-size: 14px; cursor: pointer; padding: 0 0 0 6px; }
 .payment-del:active { color: var(--danger); }
 .job-total { font-size: 12px; font-weight: 500; color: var(--rose-deep); margin-top: 4px; text-align: right; }
+
 .add-payment { display: flex; gap: 6px; margin-top: 6px; }
 .add-payment input { flex: 1; padding: 7px 10px; border-radius: 50px; border: 1.5px solid var(--rose-light); font-size: 12px; font-family: 'DM Sans', sans-serif; color: var(--text); outline: none; background: white; }
 .add-payment input:focus { border-color: var(--rose); }
 .add-payment button { padding: 7px 14px; border-radius: 50px; background: var(--rose); color: white; border: none; font-size: 12px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; white-space: nowrap; }
+
 .flag-warn { background: var(--warn-bg); border: 1px solid #f6c97a; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #7a4f00; display: flex; align-items: center; gap: 6px; }
 .flag-danger { background: var(--danger-bg); border: 1px solid #f9b8b8; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #7a0000; display: flex; align-items: center; gap: 6px; }
+
 .expand-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .action-btn { padding: 7px 14px; border-radius: 50px; border: 1.5px solid var(--rose-light); background: var(--white); font-size: 12px; font-family: 'DM Sans', sans-serif; color: var(--rose-deep); cursor: pointer; font-weight: 500; transition: all 0.15s; }
 .action-btn:active { background: var(--rose-pale); }
 .action-btn.danger { border-color: #f9b8b8; color: var(--danger); }
 .action-btn.primary { background: var(--rose); color: white; border-color: var(--rose); }
+
 .status-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .status-btn { padding: 5px 12px; border-radius: 50px; border: 1.5px solid var(--rose-light); background: white; font-size: 11px; font-family: 'DM Sans', sans-serif; color: var(--text-soft); cursor: pointer; font-weight: 500; }
 .status-btn.sel { background: var(--rose); color: white; border-color: var(--rose); }
+
 .modal-bg { display: none; position: fixed; inset: 0; background: rgba(60,20,22,0.45); z-index: 200; align-items: flex-end; justify-content: center; }
 .modal-bg.open { display: flex; }
 .modal { background: var(--white); border-radius: 24px 24px 0 0; padding: 24px 20px 36px; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; animation: slideUp 0.25s ease; }
@@ -100,13 +116,16 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .modal-actions { display: flex; gap: 10px; margin-top: 6px; }
 .btn-save { flex: 1; padding: 13px; background: var(--rose); color: white; border: none; border-radius: 50px; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; }
 .btn-cancel { padding: 13px 20px; background: var(--rose-pale); color: var(--rose-deep); border: none; border-radius: 50px; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; }
+
 .past-header { padding: 18px 16px 0; display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .past-header h3 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--rose-deep); flex: 1; }
 .past-toggle { color: var(--rose-light); font-size: 18px; }
 .past-list { display: none; }
 .past-list.open { display: flex; flex-direction: column; gap: 8px; padding: 8px 16px 0; }
+
 .empty { text-align: center; padding: 40px 20px; color: var(--text-soft); font-size: 14px; }
 .empty div { font-size: 32px; margin-bottom: 10px; }
+
 .summary-client { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rose-pale); }
 .summary-client:last-child { border-bottom: none; }
 .summary-name { font-size: 14px; font-weight: 500; }
@@ -115,13 +134,17 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </style>
 </head>
 <body>
+
 <div class="header">
 <h1><span>🧵</span> Sewing Clients</h1>
 </div>
+
 <div class="search-wrap">
 <input type="text" id="searchInput" placeholder="Search clients..." oninput="render()">
 </div>
+
 <button class="add-btn" onclick="openClientModal()">+ Add Client</button>
+
 <div class="tabs">
 <div class="tab active" onclick="setTab(this,'all')">All Active</div>
 <div class="tab" onclick="setTab(this,'pending')">Pending</div>
@@ -129,6 +152,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 <div class="tab" onclick="setTab(this,'ready')">Ready</div>
 <div class="tab" onclick="setTab(this,'pickedup')">Picked Up</div>
 </div>
+
 <div class="banner-wrap">
 <div class="banner" onclick="open1099Modal()">
 <div class="banner-icon">💰</div>
@@ -140,12 +164,15 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 <div style="color:var(--rose-light);font-size:18px">›</div>
 </div>
 </div>
+
 <div class="list" id="clientList"></div>
+
 <div class="past-header" onclick="togglePast()">
 <h3>📦 Past Clients</h3>
 <div class="past-toggle" id="pastArrow">›</div>
 </div>
 <div class="past-list" id="pastList"></div>
+
 <div class="modal-bg" id="clientModalBg" onclick="closeClientBg(event)">
 <div class="modal">
 <h2 id="clientModalTitle">New Client</h2>
@@ -159,6 +186,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </div>
 </div>
 </div>
+
 <div class="modal-bg" id="jobModalBg" onclick="closeJobBg(event)">
 <div class="modal">
 <h2 id="jobModalTitle">New Job</h2>
@@ -180,10 +208,11 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </div>
 </div>
 </div>
+
 <div class="modal-bg" id="modal1099Bg" onclick="close1099Bg(event)">
 <div class="modal">
 <h2>💰 1099 Summary</h2>
-<p style="font-size:13px;color:var(--text-soft);margin-bottom:16px;">IRS requires a 1099 for any client paying $600+ per year. All jobs — past and present — count toward the total!</p>
+<p style="font-size:13px;color:var(--text-soft);margin-bottom:16px;">IRS requires a 1099 for any client paying $2,000+ per year (updated 2026 threshold). All jobs — past and present — count toward the total!</p>
 <div id="summaryList"></div>
 <div style="margin-top:16px;padding-top:16px;border-top:2px solid var(--rose-pale);display:flex;justify-content:space-between;align-items:center;">
 <span style="font-weight:500;font-size:14px;">Total Year-to-Date</span>
@@ -192,6 +221,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 <button class="btn-save" style="margin-top:16px;width:100%;" onclick="close1099Modal()">Done</button>
 </div>
 </div>
+
 <script>
 const STORE_KEY = 'bsst_clients_v4';
 let clients = [];
@@ -199,38 +229,52 @@ let currentTab = 'all';
 let editClientId = null;
 let addJobClientId = null;
 let pastOpen = false;
+
 const COLORS = ['#c9737a','#7a8cc9','#7ab87a','#c9a87a','#9b7ac9','#c97ab8','#7ac9c0','#c95e5e'];
+
 function save() { localStorage.setItem(STORE_KEY, JSON.stringify(clients)); }
 function load() { try { clients = JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch { clients = []; } }
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
 function color(name) { let h=0; for(let c of name) h=(h*31+c.charCodeAt(0))%COLORS.length; return COLORS[h]; }
 function initials(name) { return name.trim().split(' ').map(w=>w[0]||'').slice(0,2).join('').toUpperCase(); }
 function fmt(n) { return '$'+(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
-function clientTotal(c) { return (c.jobs||[]).reduce((s,j)=>{ return s+(j.payments||[]).reduce((js,p)=>js+Number(p.amount||0),0); },0); }
+
+function clientTotal(c) {
+  return (c.jobs||[]).reduce((s,j)=>{
+    return s + (j.payments||[]).reduce((js,p)=>js+Number(p.amount||0),0);
+  },0);
+}
 function jobTotal(j) { return (j.payments||[]).reduce((s,p)=>s+Number(p.amount||0),0); }
 function yearTotal() { return clients.reduce((s,c)=>s+clientTotal(c),0); }
+
+// ── THE FIX: a client is "past" when ALL jobs are archived OR pickedup ──
 function isClientPast(c) {
   const jobs = c.jobs || [];
   if (jobs.length === 0) return false;
   return jobs.every(j => j.status === 'archived' || j.status === 'pickedup');
 }
+
 function render() {
   const q = document.getElementById('searchInput').value.toLowerCase();
-  document.getElementById('ytdTotal').textContent = fmt(yearTotal());
+  const yt = yearTotal();
+  document.getElementById('ytdTotal').textContent = fmt(yt);
   const near = clients.filter(c=>{ const t=clientTotal(c); return t>=1500&&t<2000; });
   const over = clients.filter(c=>clientTotal(c)>=2000);
   let sub = 'Tap to see 1099 summary';
   if(over.length) sub = '⚠️ '+over.length+' client'+(over.length>1?'s':'')+' over $2,000!';
   else if(near.length) sub = '👀 '+near.length+' client'+(near.length>1?'s':'')+' approaching $2,000';
   document.getElementById('ytdSub').textContent = sub;
+
   const active = clients.filter(c => {
     if(isClientPast(c)) return false;
     if(q && !c.name.toLowerCase().includes(q)) return false;
     if(currentTab==='all') return true;
     return (c.jobs||[]).some(j=>j.status===currentTab);
   });
+
   const list = document.getElementById('clientList');
   list.innerHTML = active.length ? active.map(c=>cardHTML(c)).join('') : '<div class="empty"><div>🧵</div>No clients here yet!</div>';
+
   const past = clients.filter(c => {
     if(!isClientPast(c)) return false;
     if(q && !c.name.toLowerCase().includes(q)) return false;
@@ -239,51 +283,68 @@ function render() {
   const pastList = document.getElementById('pastList');
   pastList.innerHTML = past.length ? past.map(c=>cardHTML(c,true)).join('') : '<div class="empty" style="padding:20px"><div>📦</div>No past clients yet</div>';
 }
+
 function cardHTML(c, isPast=false) {
   const total = clientTotal(c);
   let totalClass = 'total-ok', totalExtra = '';
-  if(total>=2000){totalClass='total-danger';totalExtra=' 🚨 1099!';}
-  else if(total>=1500){totalClass='total-warn';totalExtra=' 👀';}
+  if(total>=2000) { totalClass='total-danger'; totalExtra=' 🚨 1099!'; }
+  else if(total>=1500) { totalClass='total-warn'; totalExtra=' 👀'; }
+
   const addrHTML = c.address ? '<div class="card-address">📍 <a href="https://maps.google.com/?q='+encodeURIComponent(c.address)+'" target="_blank">'+c.address+'</a></div>' : '';
+
   const activeJobs = (c.jobs||[]).filter(j=>j.status!=='archived'&&j.status!=='pickedup');
   const latestJob = activeJobs.length ? activeJobs[activeJobs.length-1] : (c.jobs||[]).slice(-1)[0];
-  const badgeMap = {active:'badge-active',pending:'badge-pending',dropped:'badge-dropped',ready:'badge-ready',pickedup:'badge-pickedup'};
-  const badgeLabel = {active:'In Progress',pending:'Pending',dropped:'Dropped Off',ready:'Ready! 🎉',pickedup:'Picked Up ✅'};
+  const badgeMap = { active:'badge-active', pending:'badge-pending', dropped:'badge-dropped', ready:'badge-ready', pickedup:'badge-pickedup' };
+  const badgeLabel = { active:'In Progress', pending:'Pending', dropped:'Dropped Off', ready:'Ready! 🎉', pickedup:'Picked Up ✅' };
   const badgeStatus = latestJob ? latestJob.status : 'inactive';
+
   const jobsHTML = (c.jobs||[]).map((j,ji)=>{
     const jt = jobTotal(j);
     const isArchived = j.status==='archived';
     const isDone = j.status==='pickedup';
-    const isLocked = isArchived||isDone;
+    const isLocked = isArchived || isDone;
     const paymentsHTML = (j.payments||[]).map((p,pi)=>
       '<div class="payment-row"><span class="payment-desc">'+(p.desc||'Payment')+'</span><span class="payment-amt">'+fmt(p.amount)+'</span>'+
       (!isLocked?'<button class="payment-del" onclick="delPayment(\''+c.id+'\','+ji+','+pi+');event.stopPropagation()">×</button>':'')+
       '</div>'
     ).join('');
-    const statusBtns = ['pending','dropped','active','ready','pickedup'].map(s=>
-      '<button class="status-btn'+(j.status===s?' sel':'')+'" onclick="setJobStatus(\''+c.id+'\','+ji+',\''+s+'\');event.stopPropagation()">'+(
-        {pending:'Pending',dropped:'Dropped Off',active:'In Progress',ready:'Ready',pickedup:'Picked Up'}[s]
-      )+'</button>'
-    ).join('');
+
     return '<div class="job-card" style="'+(isLocked?'opacity:0.6':'')+'">'+
-      '<div class="job-header"><div>'+
-        '<div class="job-title">'+(j.work||'No description')+'</div>'+
-        '<div class="job-date">'+new Date(j.created).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'</div>'+
-      '</div><div style="display:flex;gap:6px;align-items:center">'+
-        '<span class="job-badge '+(badgeMap[j.status]||'badge-inactive')+'" style="font-size:10px;padding:2px 8px">'+(isArchived?'Archived':(badgeLabel[j.status]||j.status))+'</span>'+
-        (!isLocked?'<button class="payment-del" style="font-size:18px;color:#ccc" onclick="archiveJob(\''+c.id+'\','+ji+');event.stopPropagation()" title="Archive">📦</button>':'')+
-      '</div></div>'+
+      '<div class="job-header">'+
+        '<div>'+
+          '<div class="job-title">'+(j.work||'No description')+'</div>'+
+          '<div class="job-date">'+new Date(j.created).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'</div>'+
+        '</div>'+
+        '<div style="display:flex;gap:6px;align-items:center">'+
+          '<span class="job-badge '+(badgeMap[j.status]||'badge-inactive')+'" style="font-size:10px;padding:2px 8px">'+(isArchived?'Archived':(badgeLabel[j.status]||j.status))+'</span>'+
+          (!isLocked?'<button class="payment-del" style="font-size:18px;color:#ccc" onclick="archiveJob(\''+c.id+'\','+ji+');event.stopPropagation()" title="Archive job">📦</button>':'')+
+        '</div>'+
+      '</div>'+
       (j.notes?'<div style="font-size:12px;color:var(--text-soft);margin-top:4px">'+j.notes+'</div>':'')+
       '<div class="job-payments">'+(paymentsHTML||'<span style="font-size:12px;color:var(--text-soft)">No payments yet</span>')+'</div>'+
       (jt>0?'<div class="job-total">Job total: '+fmt(jt)+'</div>':'')+
-      (!isLocked?'<div class="add-payment"><input type="text" id="pdesc-'+c.id+'-'+ji+'" placeholder="Description"><input type="number" id="pamt-'+c.id+'-'+ji+'" placeholder="$" style="max-width:70px"><button onclick="addPayment(\''+c.id+'\','+ji+')">Add $</button></div>':'')+
-      (!isLocked?'<div class="status-row" style="margin-top:8px">'+statusBtns+'</div>':'')+
+      (!isLocked?
+        '<div class="add-payment">'+
+          '<input type="text" id="pdesc-'+c.id+'-'+ji+'" placeholder="Description">'+
+          '<input type="number" id="pamt-'+c.id+'-'+ji+'" placeholder="$" style="max-width:70px">'+
+          '<button onclick="addPayment(\''+c.id+'\','+ji+')">Add $</button>'+
+        '</div>':'')+
+      (!isLocked?
+        '<div class="status-row" style="margin-top:8px">'+
+          ['pending','dropped','active','ready','pickedup'].map(s=>
+            '<button class="status-btn'+(j.status===s?' sel':'')+'" onclick="setJobStatus(\''+c.id+'\','+ji+',\''+s+'\');event.stopPropagation()">'+(
+              {pending:'Pending',dropped:'Dropped Off',active:'In Progress',ready:'Ready',pickedup:'Picked Up'}[s]
+            )+'</button>'
+          ).join('')+
+        '</div>':'')+
     '</div>';
   }).join('');
+
   let flagHTML = '';
   if(total>=2000) flagHTML='<div class="flag-danger">🚨 Over $2,000 — prepare a 1099!</div>';
   else if(total>=1500) flagHTML='<div class="flag-warn">👀 Getting close to $2,000!</div>';
-  else if(total>=600) flagHTML='<div class="flag-warn">📋 Over $600 — keep tracking.</div>';
+  else if(total>=600) flagHTML='<div class="flag-warn">📋 Over $600 — keep tracking toward $2,000.</div>';
+
   return '<div class="card" id="card-'+c.id+'">'+
     '<div class="card-main" onclick="toggleCard(\''+c.id+'\')">'+
       '<div class="avatar" style="background:'+color(c.name)+'">'+initials(c.name)+'</div>'+
@@ -300,18 +361,23 @@ function cardHTML(c, isPast=false) {
       (c.address?'<div><div class="expand-label">Address</div><div class="expand-val"><a href="https://maps.google.com/?q='+encodeURIComponent(c.address)+'" target="_blank" style="color:var(--rose);text-decoration:none">📍 '+c.address+' → Open in Maps</a></div></div>':'')+
       (c.notes?'<div><div class="expand-label">Client Notes</div><div class="expand-val">'+c.notes+'</div></div>':'')+
       flagHTML+
-      '<div><div class="expand-label" style="margin-bottom:8px">Job History ('+(c.jobs||[]).length+' job'+((c.jobs||[]).length!==1?'s':'')+')</div>'+
-      (jobsHTML||'<div style="font-size:13px;color:var(--text-soft)">No jobs yet</div>')+'</div>'+
+      '<div>'+
+        '<div class="expand-label" style="margin-bottom:8px">Job History ('+(c.jobs||[]).length+' job'+((c.jobs||[]).length!==1?'s':'')+')</div>'+
+        (jobsHTML||'<div style="font-size:13px;color:var(--text-soft)">No jobs yet</div>')+
+      '</div>'+
       '<div class="expand-actions">'+
         '<button class="action-btn primary" onclick="openJobModal(\''+c.id+'\');event.stopPropagation()">+ New Job</button>'+
         '<button class="action-btn" onclick="openClientModal(\''+c.id+'\');event.stopPropagation()">✏️ Edit</button>'+
         '<button class="action-btn danger" onclick="deleteClient(\''+c.id+'\');event.stopPropagation()">🗑 Delete</button>'+
       '</div>'+
-    '</div></div>';
+    '</div>'+
+  '</div>';
 }
+
 function toggleCard(id) { document.getElementById('expand-'+id).classList.toggle('open'); }
 function setTab(el,tab) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); currentTab=tab; render(); }
 function togglePast() { pastOpen=!pastOpen; document.getElementById('pastList').classList.toggle('open',pastOpen); document.getElementById('pastArrow').textContent=pastOpen?'‹':'›'; }
+
 function openClientModal(id=null) {
   editClientId = id;
   document.getElementById('clientModalTitle').textContent = id ? 'Edit Client' : 'New Client';
@@ -328,6 +394,7 @@ function openClientModal(id=null) {
 }
 function closeClientModal() { document.getElementById('clientModalBg').classList.remove('open'); editClientId=null; }
 function closeClientBg(e) { if(e.target===document.getElementById('clientModalBg')) closeClientModal(); }
+
 function saveClient() {
   const name = document.getElementById('fName').value.trim();
   if(!name) { alert('Please enter a name'); return; }
@@ -337,11 +404,14 @@ function saveClient() {
   } else {
     const newClient = { id:uid(), name, phone:document.getElementById('fPhone').value.trim(), address:document.getElementById('fAddress').value.trim(), notes:document.getElementById('fNotes').value.trim(), jobs:[], created:Date.now() };
     clients.unshift(newClient);
-    closeClientModal(); save(); render();
-    openJobModal(newClient.id); return;
+    closeClientModal();
+    save(); render();
+    openJobModal(newClient.id);
+    return;
   }
   closeClientModal(); save(); render();
 }
+
 function openJobModal(clientId) {
   addJobClientId = clientId;
   const c = clients.find(x=>x.id===clientId);
@@ -353,6 +423,7 @@ function openJobModal(clientId) {
 }
 function closeJobModal() { document.getElementById('jobModalBg').classList.remove('open'); addJobClientId=null; }
 function closeJobBg(e) { if(e.target===document.getElementById('jobModalBg')) closeJobModal(); }
+
 function saveJob() {
   const work = document.getElementById('fJobWork').value.trim();
   if(!work) { alert('Please describe the job'); return; }
@@ -362,21 +433,29 @@ function saveJob() {
   closeJobModal(); save(); render();
   setTimeout(()=>{ const el=document.getElementById('expand-'+(addJobClientId||c.id)); if(el) el.classList.add('open'); },50);
 }
+
 function archiveJob(clientId, jobIdx) {
   const c = clients.find(x=>x.id===clientId);
   if(c && c.jobs[jobIdx]) { c.jobs[jobIdx].status='archived'; save(); render(); }
 }
+
 function setJobStatus(clientId, jobIdx, status) {
   const c = clients.find(x=>x.id===clientId);
   if(c && c.jobs[jobIdx]) {
-    c.jobs[jobIdx].status = status; save(); render();
-    if(!isClientPast(c)) { setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50); }
+    c.jobs[jobIdx].status = status;
+    save(); render();
+    // If still active (not moved to past), keep card open
+    if(!isClientPast(c)) {
+      setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50);
+    }
   }
 }
+
 function deleteClient(id) {
   if(!confirm('Delete this client and all their history?')) return;
   clients=clients.filter(c=>c.id!==id); save(); render();
 }
+
 function addPayment(clientId, jobIdx) {
   const desc = document.getElementById('pdesc-'+clientId+'-'+jobIdx).value.trim();
   const amt = parseFloat(document.getElementById('pamt-'+clientId+'-'+jobIdx).value);
@@ -387,11 +466,14 @@ function addPayment(clientId, jobIdx) {
   save(); render();
   setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50);
 }
+
 function delPayment(clientId, jobIdx, payIdx) {
   const c = clients.find(x=>x.id===clientId);
   if(c) { c.jobs[jobIdx].payments.splice(payIdx,1); save(); render();
-    setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50); }
+    setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50);
+  }
 }
+
 function open1099Modal() {
   const sorted = [...clients].filter(c=>clientTotal(c)>0).sort((a,b)=>clientTotal(b)-clientTotal(a));
   const html = sorted.map(c=>{
@@ -399,7 +481,7 @@ function open1099Modal() {
     let flag='',col='var(--text)';
     if(t>=2000){flag='🚨 1099 required';col='var(--danger)';}
     else if(t>=1500){flag='👀 Watch this one';col='var(--warn)';}
-    else if(t>=600){flag='📋 Track for 1099';col='var(--text-soft)';}
+    else if(t>=600){flag='📋 Track for 1099 ($2,000 threshold)';col='var(--text-soft)';}
     return '<div class="summary-client"><div><div class="summary-name">'+c.name+'</div><div class="summary-flag" style="color:'+col+'">'+flag+'</div></div><div class="summary-amt" style="color:'+col+'">'+fmt(t)+'</div></div>';
   }).join('')||'<p style="color:var(--text-soft);font-size:14px;text-align:center;padding:20px">No payments logged yet!</p>';
   document.getElementById('summaryList').innerHTML=html;
@@ -408,6 +490,7 @@ function open1099Modal() {
 }
 function close1099Modal() { document.getElementById('modal1099Bg').classList.remove('open'); }
 function close1099Bg(e) { if(e.target===document.getElementById('modal1099Bg')) close1099Modal(); }
+
 load();
 render();
 </script>
