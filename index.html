@@ -32,6 +32,9 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .add-btn { display: block; margin: 12px 16px 0; padding: 12px; background: var(--rose); color: white; border: none; border-radius: 50px; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500; width: calc(100% - 32px); cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s; }
 .add-btn:active { background: var(--rose-deep); }
 
+.export-btn { display: block; margin: 10px 16px 0; padding: 11px; background: white; color: var(--rose-deep); border: 1.5px solid var(--rose-light); border-radius: 50px; font-size: 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; width: calc(100% - 32px); cursor: pointer; box-shadow: var(--shadow); transition: all 0.2s; text-align: center; }
+.export-btn:active { background: var(--rose-pale); }
+
 .tabs { display: flex; overflow-x: auto; gap: 8px; padding: 14px 16px 0; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab { flex-shrink: 0; padding: 7px 14px; border-radius: 50px; font-size: 13px; font-weight: 500; border: 1.5px solid var(--rose-light); background: var(--white); color: var(--text-soft); cursor: pointer; transition: all 0.2s; }
@@ -144,6 +147,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 </div>
 
 <button class="add-btn" onclick="openClientModal()">+ Add Client</button>
+<button class="export-btn" onclick="exportData()">📥 Export My Data (Backup)</button>
 
 <div class="tabs">
 <div class="tab active" onclick="setTab(this,'all')">All Active</div>
@@ -247,11 +251,87 @@ function clientTotal(c) {
 function jobTotal(j) { return (j.payments||[]).reduce((s,p)=>s+Number(p.amount||0),0); }
 function yearTotal() { return clients.reduce((s,c)=>s+clientTotal(c),0); }
 
-// ── THE FIX: a client is "past" when ALL jobs are archived OR pickedup ──
 function isClientPast(c) {
   const jobs = c.jobs || [];
   if (jobs.length === 0) return false;
   return jobs.every(j => j.status === 'archived' || j.status === 'pickedup');
+}
+
+// ── EXPORT FUNCTION ──
+function exportData() {
+  if (!clients || clients.length === 0) {
+    alert('No client data to export yet!');
+    return;
+  }
+
+  // Build CSV rows
+  const rows = [];
+  rows.push(['Client Name','Phone','Address','Client Notes','Job Description','Job Status','Job Date','Payment Description','Payment Amount','Job Total','Client Total']);
+
+  clients.forEach(c => {
+    const clientTotal_val = clientTotal(c);
+    if (!c.jobs || c.jobs.length === 0) {
+      rows.push([
+        c.name || '', c.phone || '', c.address || '', c.notes || '',
+        '', '', '', '', '', '', fmt(clientTotal_val)
+      ]);
+    } else {
+      c.jobs.forEach((j, ji) => {
+        const jt = jobTotal(j);
+        const jobDate = new Date(j.created).toLocaleDateString('en-US');
+        if (!j.payments || j.payments.length === 0) {
+          rows.push([
+            ji === 0 ? (c.name || '') : '',
+            ji === 0 ? (c.phone || '') : '',
+            ji === 0 ? (c.address || '') : '',
+            ji === 0 ? (c.notes || '') : '',
+            j.work || '', j.status || '', jobDate,
+            '', '', fmt(jt),
+            ji === 0 ? fmt(clientTotal_val) : ''
+          ]);
+        } else {
+          j.payments.forEach((p, pi) => {
+            rows.push([
+              ji === 0 && pi === 0 ? (c.name || '') : '',
+              ji === 0 && pi === 0 ? (c.phone || '') : '',
+              ji === 0 && pi === 0 ? (c.address || '') : '',
+              ji === 0 && pi === 0 ? (c.notes || '') : '',
+              pi === 0 ? (j.work || '') : '',
+              pi === 0 ? (j.status || '') : '',
+              pi === 0 ? jobDate : '',
+              p.desc || 'Payment',
+              p.amount || 0,
+              pi === j.payments.length - 1 ? fmt(jt) : '',
+              ji === 0 && pi === 0 ? fmt(clientTotal_val) : ''
+            ]);
+          });
+        }
+      });
+    }
+  });
+
+  // Convert to CSV string
+  const csv = rows.map(row =>
+    row.map(cell => {
+      const str = String(cell).replace(/"/g, '""');
+      return str.includes(',') || str.includes('"') || str.includes('\n') ? '"' + str + '"' : str;
+    }).join(',')
+  ).join('\n');
+
+  // Download
+  const today = new Date().toISOString().slice(0,10);
+  const filename = 'BSST_Sewing_Clients_' + today + '.csv';
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  alert('✅ Exported! Save ' + filename + ' to your Google Drive (evettegreen808) for safe keeping!');
 }
 
 function render() {
@@ -444,7 +524,6 @@ function setJobStatus(clientId, jobIdx, status) {
   if(c && c.jobs[jobIdx]) {
     c.jobs[jobIdx].status = status;
     save(); render();
-    // If still active (not moved to past), keep card open
     if(!isClientPast(c)) {
       setTimeout(()=>{ const el=document.getElementById('expand-'+clientId); if(el) el.classList.add('open'); },50);
     }
